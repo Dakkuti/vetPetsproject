@@ -7,10 +7,12 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <router-link to="/">Inicio</router-link>
+              <!-- <a class="nav-link active" aria-current="page" href="#">Inicio</a> -->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Perros</a>
+              <router-link to="/dog">Perros</router-link>
+              <!-- <a class="nav-link" href="#">Perros</a> -->
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Gatos</a>

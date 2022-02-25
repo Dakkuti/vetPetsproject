@@ -1,52 +1,10 @@
 <template>
-  <div>
-    <div
-      id="carouselExampleInterval"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <img
-            src="../../assets/pet-shop.png"
-            class="d-block w-100"
-            alt="img"
-          />
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img
-            src="../../assets/pet-shop.png"
-            class="d-block w-100"
-            alt="img"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="../../assets/pet-shop.png"
-            class="d-block w-100"
-            alt="img"
-          />
-        </div>
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleInterval"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleInterval"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+  <div class="container">
+    <ul class="row" v-for="(item, index) in data" :key="index">
+      <li class="col">
+        <img :src="item.img" class="imgpets" alt="img" />
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -54,8 +12,32 @@
 <script>
 export default {
   name: "Carousel",
+  props: {
+    data: {
+      type: Array,
+    },
+  },
+
+  mounted() {
+    console.log(this.data);
+  },
 };
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+li {
+  list-style: none;
+  flex: 1 0 0%;
+}
+.imgpets {
+  width: 34vh;
+  height: 25vh;
+}
 </style>
