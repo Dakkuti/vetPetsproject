@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Index from "../src/components/Index.vue";
-import Perros from "../src/components/main/Perros.vue";
+// import Index from "../src/components/Index.vue";
+// import Perros from "../src/components/main/Perros.vue";
 
 Vue.use(Router);
 
@@ -11,12 +11,22 @@ export default new Router({
         {
             path: "/",
             name: 'home',
-            component: Index
+            component: () => import("./screen/Index.vue")
         },
         {
             path: "/dog",
             name: 'dog',
-            component: Perros
+            component: () => import("../src/components/main/Perros.vue")
+        },
+        {
+            path: "/Login",
+            name: 'Login',
+            component: () => import("./screen/Login.vue")
+        },
+        {
+            path: "/Register",
+            name: 'Register',
+            component: () => import("./screen/Register.vue")
         },
     ],
 });

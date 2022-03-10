@@ -15,13 +15,13 @@
               <!-- <a class="nav-link" href="#">Perros</a> -->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Gatos</a>
+              <router-link to="/dog">Gatos</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Otros</a>
+              <router-link to="/dog">Otros</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
+              <router-link to="/dog">Contacto</router-link>
             </li>
           </ul>
         </div>
@@ -47,9 +47,28 @@ export default {
   font-size: 1.5em;
   font-weight: bold;
 }
-.nav-item,
+.nav-item {
+  color: rgb(255 255 255 / 90%) !important;
+  font-weight: bold;
+  padding: 8px;
+  width: 90px;
+}
+
+.nav-item:hover {
+  background: #fab2a085;
+  padding: 8px;
+  width: 90px;
+}
 .nav-link {
   color: rgb(255 255 255 / 90%) !important;
   font-weight: bold;
+}
+.navbar-expand-lg .navbar-nav {
+  flex-direction: row;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
 }
 </style>

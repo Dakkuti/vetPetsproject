@@ -12,22 +12,22 @@
           este año! :)
         </p>
       </div>
-
-      <carousel :data="pets" />
     </div>
+
+    <router-link :to="{ name: 'Login' }" class="mt-2 goBack"
+      >Iniciar Sesión</router-link
+    >
   </div>
 </template>
 
 <script>
-import NavbarVue from "./main/Navbar.vue";
+import NavbarVue from "../components/main/Navbar.vue";
 import axios from "axios";
-import Carousel from "./main/Carousel.vue";
 
 export default {
   name: "Index",
   components: {
     NavbarVue,
-    Carousel,
   },
   data() {
     return {
